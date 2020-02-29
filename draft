@@ -1,0 +1,85 @@
+ if cart[index][:item] == (coupons[index][:item]) do 
+   cart[index][:cost] = coupons[index][:cost]/[cart][index][:count]
+ end 
+ 
+ 
+ consolidate cart
+   
+# def consolidate_cart(cart)
+# consolidated = []
+# index = 0 
+# consolidated = cart
+# while index < consolidated.length do 
+#   if !consolidated[index][:count] 
+#     consolidated[index][:count] = 1 
+#   else 
+#     consolidated[index][:count] += 1 
+#   end 
+#   index += 1 
+# end 
+# consolidated
+# end
+
+ 
+ apply coupons: 
+ index = 0 
+applied_index = 0 
+applied = {}
+while index < cart.length do 
+ applied = find_item_by_name_in_collection(cart[index][:item], coupons)
+
+ while applied_index < applied.length do 
+ applied[:item] = "#{cart[index][:item]} W/COUPON"
+ applied_index += 1
+ end 
+   index += 1 
+ end
+ puts applied
+ 
+applied
+
+
+  index = 0 
+  applied_coupons = []
+  while index < cart.length do 
+  coupon = find_item_by_name_in_collection(coupons[index][:item], cart)
+  if coupon 
+      applied = {
+      :item => "#{cart[index][:item]} W/COUPON",
+      :price => coupons[index][:price],
+      :clearance => cart[index][:clearance],
+      :count => coupons[index][:num]
+    }
+  else 
+    applied = coupon
+    applied_coupons << applied
+        puts applied_coupons
+  end 
+    index += 1 
+
+end 
+applied_coupons
+
+new_cart = []
+index = 0 
+while index < cart.length do 
+
+  if find_item_by_name_in_collection(cart[index][:item], coupons) == true
+    new_cart_item = {
+    :item => "#{cart[index][:item]} W/COUPON",
+    :price => coupons[:price],
+    :clearance => cart[index][:clearance],
+    :count => coupons[:num]
+    } 
+  else 
+    new_cart_item = {
+      :item => cart[index][:item],
+      :price => cart[index][:price],
+      :clearance => cart[index][:clearance],
+      :count => cart[index][:count]
+    }
+  new_cart << new_cart_item
+end 
+index += 1 
+end 
+    new_cart
