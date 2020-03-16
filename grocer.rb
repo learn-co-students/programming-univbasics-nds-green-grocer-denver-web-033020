@@ -1,6 +1,6 @@
 require 'spec_helper'
 
- find_item_by_name_in_collection(name, collection)
+def find_item_by_name_in_collection(name, collection)
   # Implement me first!
   #
   # Consult README for inputs and outputs
@@ -10,6 +10,7 @@ require 'spec_helper'
       end
     end
   nil
+end
 
 def consolidate_cart(cart)
   new_cart = {}
