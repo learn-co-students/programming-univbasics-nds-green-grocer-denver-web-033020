@@ -1,0 +1,9 @@
+def find_item_by_name_in_collection(name, collection)
+name
+"WINE"
+collection
+[{:item=>"DOG FOOD"}, {:item=>"WINE"}, {:item=>"STRYCHNINE"}]
+
+consolidate_cart(cart)
+cart
+[nil, nil, nil]
