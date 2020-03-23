@@ -192,7 +192,6 @@ describe "Grocer" do
 
     end
   end
-
   describe "#apply_clearance" do
     it "takes 20% off price if the item is on clearance" do
       cart = [find_item_by_name_in_collection('TEMPEH', items)]
